@@ -67,6 +67,34 @@ void adAtPosition(Node *&head, int position, int data)
     temp->next = temp2;
 }
 
+void deleteAtBeg(Node *&head){
+    Node* temp=head->next;
+    delete head;
+    head=temp;
+}
+
+void deleteEnd(Node * head){
+    while(head->next->next!=NULL)
+       { head=head->next;}
+    delete head->next;
+    head->next=NULL;
+}
+
+void deleteAtPosition(Node *& head , int position){
+    if(position<0){cout<<"not a valid position value!!"; return;}
+    if(position==1){deleteAtBeg(head); return;}
+    Node* temp=head,*temp2;
+    for(int i =0;i<position-2;i++){
+        if(temp->next==NULL) break;
+        temp=temp->next;
+    }
+    if(temp->next==NULL){deleteEnd(head);return;}
+    temp2=temp->next->next;
+    delete temp->next;
+    temp->next=temp2;
+
+}
+
 int findLength(Node* head){
     int count=0;
     while(head!=NULL){
@@ -139,17 +167,18 @@ int main()
     }
     adAtPosition(head, 1000, 856);
     // display(head);
-
     // cout<<endl<<Node::nodeCount;
-
     // cout<<endl<<findLengthRecursive(head);
-
     // cout<<endl<<findLength(head)<<endl;
-
     // reverseLL(head);
     // display(head);
     // cout<<endl<<endl<<findLength(head);
     // head=revLLRecur(head);
+    display(head);
+    // deleteEnd(head);
+    cout<<endl<<"---------------------------------------"<<endl;
+    deleteAtBeg(head);
+    deleteAtPosition(head,300);
     display(head);
 
 }
