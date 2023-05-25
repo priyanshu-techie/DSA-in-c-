@@ -39,6 +39,5 @@ int main(){
     for(int i =0;i<v2_rev.size();i++){
         cout<<v2_rev[i]<<" ";
     }
-
     return 0;
 }
