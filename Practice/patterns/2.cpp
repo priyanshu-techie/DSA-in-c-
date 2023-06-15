@@ -110,5 +110,6 @@ int main(){
     // pat4();
     // pat5();
     pat6();
+    
     return 0;
 }
