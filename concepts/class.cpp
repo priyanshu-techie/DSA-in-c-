@@ -46,5 +46,6 @@ int main()
     first.run();
     cout<<endl;
     second.run();
+    first.stop();
     return 0;
 }
