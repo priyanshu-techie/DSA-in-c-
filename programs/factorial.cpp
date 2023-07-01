@@ -9,6 +9,16 @@ int fact(int num){
         return num*fact(num-1);
     }
 }
+// using static variable
+
+int staticFact(int num){
+    static int ans=1;
+    if(num==1||num==0) return ans;
+    else{
+        ans=num*ans;
+        return fact(--num);
+    }
+}
 
 int main(){
     int num;
@@ -21,3 +31,4 @@ int main(){
     cout<<"please enter a positive number";
     return 0;
 }
+

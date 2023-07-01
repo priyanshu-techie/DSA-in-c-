@@ -1,0 +1,11 @@
+In C++, a static variable is a variable that retains its value across multiple function calls. When a variable is declared as static, it is allocated storage space for the entire duration of the program execution, regardless of whether it is inside a function or defined at the global scope. Here are a few key characteristics of static variables:
+
+Lifetime: Static variables have a lifetime that extends throughout the program's execution. They are initialized only once, and their values are preserved between function calls.
+
+Scope: The scope of a static variable can be either local or global. If declared within a function, the static variable is local to that function and retains its value between function calls. If declared at the global scope, the static variable is accessible from any part of the program but is limited to the file it is defined in using the static keyword.
+
+Default initialization: If a static variable is not explicitly initialized, it is automatically initialized to zero (for numeric types) or a null pointer (for pointer types).
+
+Visibility: In the case of a static variable declared within a function, it is not accessible outside that function. However, it retains its value across different function calls.
+
+Static variables are commonly used when we need to share a value across function calls while maintaining its state. They are often used in situations where we want to keep track of some data or count occurrences across multiple invocations of a function.
