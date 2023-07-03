@@ -39,6 +39,11 @@ animal::animal(string str)
     name = str;
 }
 
+// you can also initialise the variables by writing the variables in this way
+
+// animal(string str, int age):name(str),age(age){}s
+
+
 int main()
 {
     animal first("chimpanzee");
