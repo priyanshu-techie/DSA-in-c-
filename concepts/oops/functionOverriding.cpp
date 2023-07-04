@@ -20,5 +20,12 @@ class Derived : public Base {
 int main() {
     Derived derived1;
     derived1.print();
+    // accesing overwritten function
+    derived1.Base::print();
+
+    // using pointers
+    Derived derived2;
+    Base* ptr=&derived2;
+    ptr->print();
     return 0;
 }

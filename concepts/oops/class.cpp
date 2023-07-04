@@ -48,6 +48,8 @@ int main()
 {
     animal first("chimpanzee");
     animal second("monkey");
+    animal * ptr= new animal("rogi");
+    ptr->run();
     first.run();
     cout<<endl;
     second.run();
