@@ -102,6 +102,66 @@ void pat6(){
     }
 }
 
+/*
+    1
+   212
+  32123
+ 4321234
+543212345
+*/
+void pat7(){
+    int i, j, k;
+    for(i=1;i<=5;i++){
+        // for space 
+        for(j=5-i;j>0;j--){
+            cout<<" ";
+        }
+        // for reverse number
+        for(k=i;k>=1;k--){
+            cout<<k;
+        }
+        // for forward number
+        for(k=2;k<=i;k++){
+            cout<<k;
+        }
+        cout<<endl;
+    }
+}
+
+/*
+
+    *
+   * *
+  * * *
+ * * * *
+* * * * *
+* * * * *
+ * * * *
+  * * *
+   * *
+    *
+*/
+void pat8(){
+    // take two loops,print space, print star
+    for(int i=1;i<=5;i++){
+        for(int j=5-i;j>0;j--){
+            cout<<" ";
+        }
+        for(int k =0;k<i;k++){
+            cout<<"* ";
+        }
+        cout<<endl;
+    }
+    for(int i=5;i>=1;i--){
+        for(int j=5-i;j>0;j--){
+            cout<<" ";
+        }
+        for(int k =0;k<i;k++){
+            cout<<"* ";
+        }
+        cout<<endl;
+    }
+}
 
 int main(){
     // pat1();
@@ -109,7 +169,8 @@ int main(){
     // pat3();
     // pat4();
     // pat5();
-    pat6();
+    // pat6();
+    pat8();
     
     return 0;
 }

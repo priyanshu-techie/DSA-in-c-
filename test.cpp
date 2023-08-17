@@ -1,29 +1,24 @@
-#include <iostream>
+#include<iostream> 
 
-using namespace std;
-class Cin
-{
-public:
-    int val;
-    Cin() : val(1) {}
-    friend void operator-(Cin &temp);
-    friend void showVal(Cin temp);
-};
-void operator -(Cin &temp)
-{
-    cout << "You are trying to subtract"<<endl;
-    temp.val--;
-}
-void showVal(Cin temp){ 
-    cout<<temp.val<<endl;
-}
-int main()
-{
-    Cin abc;
-    showVal(abc);
-    -abc;
-    showVal(abc);
+using namespace std; 
 
-
+int main(){
+    int i, j, k;
+    for(i=1;i<=5;i++){
+        // for space 
+        for(j=5-i;j>0;j--){
+            cout<<" ";
+        }
+        // for reverse number
+        for(k=i;k>=1;k--){
+            cout<<k;
+        }
+        // for forward number
+        for(k=2;k<=i;k++){
+            cout<<k;
+        }
+        cout<<endl;
+    }
+    
     return 0;
 }
