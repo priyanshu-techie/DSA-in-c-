@@ -163,6 +163,34 @@ void pat8(){
     }
 }
 
+void pat9(){
+    int i , j, k;
+    for(i =0;i<5;i++){
+        // for printing the space
+        for(j=4;j>i;j--){
+            cout<<" ";
+        }
+        cout<<"*";
+        for(k=0;k<i*2-1;k++){
+            cout<<" ";
+        }
+        if(i>0) cout<<"*";
+        cout<<endl;
+    }
+    for(i =4;i>=0;i--){
+        // for printing the space
+        for(j=4;j>i;j--){
+            cout<<" ";
+        }
+        cout<<"*";
+        for(k=0;k<i*2-1;k++){
+            cout<<" ";
+        }
+        if(i>0) cout<<"*";
+        cout<<endl;
+    }
+}
+
 int main(){
     // pat1();
     // pat2();
@@ -170,7 +198,8 @@ int main(){
     // pat4();
     // pat5();
     // pat6();
-    pat8();
+    // pat8();
+    pat9();
     
     return 0;
 }
