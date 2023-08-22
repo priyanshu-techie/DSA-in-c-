@@ -3,7 +3,8 @@
 using namespace std; 
 
 int main(){
-    int * abc=new int[21];
-    cin >>abc[0];
+    int abc = INT_MAX;
+
+    cout<<abc;
     return 0;
 }
