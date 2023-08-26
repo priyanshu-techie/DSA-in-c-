@@ -1,40 +1,30 @@
 #include<iostream> 
-#include<vector>
 
 using namespace std; 
 
-int maxElem(vector<int> abc){
-    int max= INT_MIN;
-    for(int i=0;i<abc.size();i++){
-        if(abc[i]>max) max=abc[i];
-    }
-    return max;
-}
 
 int lengthOfLongestArithmeticSubArr(int *arr,int n){
     if(n<=2) return n;
-    int prevDiff, diff,count=2;
-    vector<int> maxL;
+    int prevDiff, diff,count=2,ans=0;
     for(int i=2;i<n;i++){
         prevDiff=arr[i-1]-arr[i-2];
         diff=arr[i]-arr[i-1];
         if(prevDiff==diff){
             count++;
+            ans=max(ans,count);
             continue;
         }
         else{
-            maxL.push_back(count);
-            count=1;
+            count=2;
         }
     }
-    maxL.push_back(count);
-    return maxElem(maxL);
+    return ans;
 
 
 }
 
 int main(){
-    int arr[7]={1,1,1,1,1,1,1};
+    int arr[7]={10,7,4,6,8,10,11};
     cout<<lengthOfLongestArithmeticSubArr(arr,7);    
     return 0;
 }
