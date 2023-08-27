@@ -3,11 +3,14 @@
 using namespace std; 
 
 int main(){
-    int a=0,b=0;
-    int at[]={2,3,4,5};
-    int bt[]={5,6,7,8};
-    at[a++]=bt[b++];
-    cout<<a<<" "<<b;
-    cout<<endl<<at[0]<<at[1];
+    int arr[5]={2,3,7,5,11};
+    for(int i =0;i<5;i++){
+        for(int k=i;k<5;k++){
+            for(int j=i;j<=k;j++){
+                cout<<arr[j];
+            }
+            cout<<endl;
+        }
+    }
     return 0;
 }
