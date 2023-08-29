@@ -163,6 +163,18 @@ void pat8(){
     }
 }
 
+/*
+    *
+   * *
+  *   *
+ *     *
+*       *
+*       *
+ *     *
+  *   *
+   * *
+    *
+*/
 void pat9(){
     int i , j, k;
     for(i =0;i<5;i++){
@@ -191,6 +203,40 @@ void pat9(){
     }
 }
 
+/*
+n=5
+ *
+  **
+   ***
+    ****
+     *****
+    ****
+   ***
+  **
+ *
+ 
+*/
+
+void pat10(int n){
+    for(int i =0;i<n;i++){
+        for(int j=0;j<=i;j++)
+            cout<<" ";
+        for(int j=0;j<=i;j++)
+            cout<<"*";
+        cout<<endl;
+        
+    }
+    for(int i =n-2;i>=0;i--){
+        for(int j=0;j<=i;j++)
+            cout<<" ";
+        for(int j=0;j<=i;j++)
+            cout<<"*";
+        cout<<endl;
+        
+    }
+}
+
+
 int main(){
     // pat1();
     // pat2();
@@ -199,7 +245,8 @@ int main(){
     // pat5();
     // pat6();
     // pat8();
-    pat9();
+    // pat9();
+    pat10(5);
     
     return 0;
 }
