@@ -1,23 +1,10 @@
-#include<iostream> 
+#include<iostream>
+#include<vector> 
 
 using namespace std; 
 
-int * hj(){
-    int * arr = new int[6];
-    return arr;
-}
-
 int main(){
-    int *abc=hj();
-    abc[0]=6;
-    abc[1]=5;
-    abc[2]=4;
-    abc[3]=2;
-    abc[4]=3;
-    abc[5]=1;
-    abc[6]=1;
-    for(int i =0;i<7;i++){
-        cout<<abc[i]<<", ";
-    }
+    vector<vector<int>>abl={{2,3,3,4},{6,6,7,8},{9,9,2,4}};
+    cout<<abl[0].size();
     return 0;
 }

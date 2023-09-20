@@ -22,13 +22,17 @@ int main(){
         }
         cout<<endl;
         col_e--;
-        for(int i=col_e;i>=col_s;i--){
-            cout<<arr[row_e][i]<<", ";
+        if(row_s<=row_e){
+            for(int i=col_e;i>=col_s;i--){
+                cout<<arr[row_e][i]<<", ";
+            }
         }
         cout<<endl;
         row_e--;
-        for(int i=row_e;i>=row_s;i--){
-            cout<<arr[i][col_s]<<", ";
+        if(col_s<=col_e){
+            for(int i=row_e;i>=row_s;i--){
+                cout<<arr[i][col_s]<<", ";
+            }
         }
         cout<<endl;
         col_s++;
