@@ -1,10 +1,17 @@
-#include<iostream>
-#include<vector> 
+#include<iostream> 
 
 using namespace std; 
 
 int main(){
-    vector<vector<int>>abl={{2,3,3,4},{6,6,7,8},{9,9,2,4}};
-    cout<<abl[0].size();
+    int V,W;
+    cout<< "Enter the number of vehicles. ";
+    cin>>V;
+    cout<<endl<<"Enter the number of tyres: ";
+    cin>>W;
+    int twoWhe, fourWhe;
+    twoWhe= (4* V - W)/2;
+    fourWhe = V-twoWhe;
+    cout<<endl<<twoWhe<<" "<<fourWhe;
+
     return 0;
 }
