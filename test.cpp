@@ -2,16 +2,22 @@
 
 using namespace std; 
 
-int main(){
-    int V,W;
-    cout<< "Enter the number of vehicles. ";
-    cin>>V;
-    cout<<endl<<"Enter the number of tyres: ";
-    cin>>W;
-    int twoWhe, fourWhe;
-    twoWhe= (4* V - W)/2;
-    fourWhe = V-twoWhe;
-    cout<<endl<<twoWhe<<" "<<fourWhe;
+bool isPrime(int num){
+    if(num<=1) return false;
+    for(int i =2;i<num;i++){
+        if(num%i==0) return false;
+    }
+    return true;
+}
 
+int main(){
+    if(isPrime(27)){
+        cout<<"is a prime";
+    }   
+    else
+    {
+        cout<<"not a prime";
+    }
+    
     return 0;
 }
