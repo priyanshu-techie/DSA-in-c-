@@ -6,6 +6,14 @@
 using namespace std; 
 
 void seiveOfEratosthenes(int end){
+    // STEPS
+    // 1.have a list of numbers 
+    // 2.unmarke (not zero) means number is prime
+    // 3.p= first unmarked(2)
+    // 4.mark every multiple of p
+    // 5.take p to the next unmarked and mark all the multiples, starting from p²(since prev are already marked)
+    // 6.move p untill p²<upperLimit 
+    // 7.print all the unmarked nos
     vector<int> temp;
     // create a list
     for(int i =2;i<end;i++){
