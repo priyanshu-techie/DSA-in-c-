@@ -4,7 +4,7 @@ using namespace std;
 
 void merge(int *arr, int low, int mid, int high)
 {
-    int *tempArr = new int[high + 1];
+    int *tempArr = new int[high- low + 1];
     int i = low, j = mid + 1, k = 0;
     while (i <= mid && j <= high)
     {
@@ -50,9 +50,9 @@ void mergeSort(int *arr, int low, int high)
 
 int main()
 {
-    int ar[4]={32,5,33,2};
-    mergeSort(ar,0,3);
-    for(int i =0;i<4;i++){
+    int ar[7]={7,5,2,1,6,3,8};
+    mergeSort(ar,0,6);
+    for(int i =0;i<7;i++){
         cout<< ar[i]<<" ";
     }
     return 0;

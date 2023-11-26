@@ -43,7 +43,7 @@ int main() {
     int N, K;
     cin >> N >> K;
 
-    vector<int> shifts, forOrder;
+    vector<int> shifts;
     int biggestVal;
     unordered_map<int, int> umap;
 
@@ -57,11 +57,9 @@ int main() {
                 // remove the smaller and push it to the shift array
                 subList.erase(it1);
                 shifts.push_back(val1);
-                forOrder.push_back(val1);
             } else {
                 subList.erase(it2);
                 shifts.push_back(val2);
-                forOrder.push_back(val2);
             }
             biggestVal = *subList.begin();
         }
@@ -86,11 +84,9 @@ int main() {
         for (i = N; i < inputArr.size(); i++) {
             inputArr.push_back(inputArr[i]);
         }
-        for (i = 0; i < forOrder.size(); i++) {
-            inputArr.push_back(forOrder[i]);
+        for (i = shifts.size()-(N-1); i < shifts.size(); i++) {
+            inputArr.push_back(shifts[i]);
         }
-        // clear the forOrder vector
-        forOrder.clear();
     }
 
     cout << calculatePrice(shifts);

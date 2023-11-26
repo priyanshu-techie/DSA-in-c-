@@ -2,6 +2,34 @@
 #include<vector>
 
 using namespace std; 
+int snake =0 , ladder =0 ;
+
+void move(vector<float>board, int dice, int & index){
+    // update the index
+    if(index==0) index= index+dice-1;
+    else index+=dice;
+    // check if snake or ladder and move
+    float val = board[index];
+    cout<<endl<<val<<endl;
+    // if nothing (13.00==13)
+        if(int(val)==val) return;
+    // if snake 
+        if(val<=-1){
+            snake++;
+            val = (int(val*(-1)*100))%100;
+            index=val-1;
+        }
+    // if ladder 
+        if(val>1&&val<2){
+            ladder++;
+            val = (int(val*100))%100;
+            index=val-1;
+        }
+    // if again snake or ladder again call the move functon
+        if(val<=-1||(val>1&&val<2)){
+            move(board,0,index);
+        }
+}
 
 int main(){
      vector<vector<float>>board= {
@@ -18,6 +46,7 @@ int main(){
     };
     vector<float> straight;
     int row = 9 ,col=0;
+    // making the board in a straight line
     while(!(row==0 && col==0)){
         if(col==0){
             while(col<=9){
@@ -38,8 +67,20 @@ int main(){
         }
         if(row==-1) row++;     
     }
-    for(int i=0 ;i<straight.size();i++){
-        cout<<straight[i]<<", ";
+    vector<int> dice={6,6,6,6,6,5,2};
+    int index = 0;
+    for(int i = 0 ;i<dice.size();i++){
+        move(straight,dice[i],index);
     }
+
+    if(straight[index]==100){
+        cout<<"you won!";
+    }
+    else{
+        cout<<"you lost! last val is :"<<straight[index];
+    }
+    cout<<endl<<"snake encountered :"<<snake;
+    cout<<endl<<"ladder encountered :"<<ladder;
+
     return 0;
 }
