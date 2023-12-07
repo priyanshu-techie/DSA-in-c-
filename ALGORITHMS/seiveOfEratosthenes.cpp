@@ -1,9 +1,12 @@
 #include<iostream>
+#include<unordered_map>
+#include<algorithm>
 #include<vector> 
 
 // The sieve of Eratosthenes is one of the most efficient ways to find all primes smaller
 // than N when N is smaller than 10 million or so
 using namespace std; 
+
 
 void seiveOfEratosthenes(int end){
     // STEPS
@@ -39,7 +42,7 @@ void seiveOfEratosthenes(int end){
 
 // chat gpt code 
 
-/*void sieveOfEratosthenes(int n) {
+void sieveOfEratosthenes1(int n) {
     vector<bool> isPrime(n + 1, true);
 
     for (int p = 2; p * p <= n; p++) {
@@ -58,7 +61,43 @@ void seiveOfEratosthenes(int end){
     }
 }
 
-*/
+
+// hash map implementation
+void seiveOfEratosthenes2(int n){
+    unordered_map<int,bool> list;
+    for(int i =2;i<=n;i++){
+        list[i]= false;
+    }
+    int num = 2;
+    int multiple,prod;
+    while(num*num <= n){
+        if(list[num]){
+            num++;
+            continue;
+        }
+        multiple = num;
+        // start with the square of the number to optimeise more.
+        prod = num * multiple;
+        while(prod<=n){
+            list[prod] = true;
+            multiple++;
+            prod = num* multiple;
+        }
+        num++;
+    }
+    unordered_map<int,bool>::iterator itr;
+    vector<int> ans;
+    for(itr= list.begin();itr!=list.end();itr++){
+        if(!itr->second){
+            ans.push_back(itr->first);
+        }
+    }
+    sort(ans.begin(),ans.end());
+    for(int val: ans){
+        cout<<val <<" ";
+    }
+}
+
 
 int main(){
     seiveOfEratosthenes(205);
