@@ -3,6 +3,11 @@
 // make it a class implementation
 using namespace std;
 // more effiecint since it doesnt creates new arrays
+// best case complexity of quick sort is O(n*logn)
+// worst case complexity of quick sort is O(n²)
+// when you choose pivot as the first elem or last elem then you get worst case, as one side of you array will always be of size n (if the array iis already sorted) hence n*n operations
+// best pivot 1. middle elem
+//            2. random elem  
 
 void swap(int*a, int * b){
     int c = *a ;
