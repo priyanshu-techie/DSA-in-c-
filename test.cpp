@@ -3,7 +3,8 @@
 using namespace std; 
 
 int main(){
-    string abc = "ccccccccccccccccccccccccccccccccccccccccccccc";
-    cout<<abc.size();
+    char b = 't';
+    string a = "" + string(1,b);
+    cout<<a;
     return 0;
 }

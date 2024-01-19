@@ -1,0 +1,6 @@
+while making the recursive function, 
+1. make the tree diagram in copy
+2. understand the base case
+3. write the base case first in the function
+4. then write the one part of the descision tree
+5. then the other part of the tree
